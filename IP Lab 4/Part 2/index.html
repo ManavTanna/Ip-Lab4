@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student's Corner</title>
+</head>
+<body>
+    <h1>Student's Corner</h1>
+</body>
+<script>
+    const per1 = {
+        name:"Micheal Scott",
+        age:"46",
+        position:"Regional Manager",
+    }
+    console.log("Head: ", per1);
+    class Person{
+        constructor(name,age,position){
+            this.name=name;
+            this.age=age;
+            this.position=position;
+        }
+       
+    }
+    const per2= new Person("Dwight Schrute", 42, "Assistant to the Regional Manager");
+    console.log("Assistant to the head: ", per2);
+
+    function Dunder(name,age,position) {
+        this.name=name;
+        this.age=age;
+        this.position=position;
+        
+    }
+    const per3=new Dunder("Kevin Malone", 43, "Accounting");
+    console.log("Accounts: ",per3);
+
+   
+</script>
+</html>

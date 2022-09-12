@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student's Corner</title>
+</head>
+<body>
+    <h1>Student's Corner</h1>
+    <p>Input box for error test</p>
+    <input
+        id="error_checking"
+        type="text"
+        value=""
+        placeholder="Enter string or 0 for error"
+    />
+    <button type="submit" onclick="return checkError()">Submit</button>
+
+</body>
+<script>
+    class Person{
+        constructor(name,age,position,id){
+            this.name=name;
+            this.age=age;
+            this.position=position;
+            this.id=id
+        }
+       
+    }
+    class Student extends Person {
+            constructor(name, age, position, id, place) {
+                super(name, age, position, id);
+                this.place = place;
+            }
+        }
+    const per2= new Student("Dwight Schrute", 42, "Assistant to the Regional Manager", 2, "Scranton");
+    console.log("Assistant to the head: ", per2);
+
+    const checkError = () => {
+            const value = document.getElementById("error_checking").value;
+            console.log(value);
+            if (!value || value === "0") {
+                throw new Error("Invalid Input ");
+            } else {
+                console.log("Valid");
+            }
+        };
+
+   
+</script>
+</html>
