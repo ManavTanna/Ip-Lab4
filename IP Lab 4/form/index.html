@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0" />
+<title>HTML FORM</title>
+<script
+src="https://kit.fontawesome.com/f635a28c1e.js"
+crossorigin="anonymous"
+></script>
+<link rel="icon" href="https://res.cloudinary.com/djww0nfoy/image/upload/v1659328091/iplab/favicon_yl9ymj.ico">
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Poppins:wght@100;300;400&display=swap');
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+body {
+font-family: "Poppins", sans-serif;
+margin: 0.7rem;
+background-color: #E9DAC1;
+}
+.cart {
+display: flex;
+justify-content: space-between;
+padding: 1rem;
+margin-left: 10rem;
+
+}
+form h3 {
+font-size: 2rem;
+margin-bottom: 1rem;
+}
+input,
+select {
+margin-bottom: 1rem;
+}
+.mt-1 {
+margin-top: 1rem;
+}
+.options {
+margin-top: 1rem;
+}
+.options label {
+margin-top: 0.8rem;
+font-size: 0.8rem;
+}
+.btn {
+display: inline-block;
+margin-top: 1rem;
+font-size: 1.2rem;
+padding: 0.4rem 0.8rem;
+color: white;
+background: #5800FF;
+border: none;
+border-radius: 7px;
+cursor: pointer;
+transition: all 750ms ease-in-out;
+}
+.btn:hover {
+transform: scale(1.05);
+background-color: #2dbdff;
+}
+.preview {
+display: flex;
+width: 400px;
+margin-right: 200px;
+background: #EAF6F6;
+justify-content: center;
+align-items: center;
+}
+.preview img {
+height: 80%;
+width: 80%;
+}
+@media (max-width: 1100px) {
+.cart {
+margin-left: 3rem;
+}
+.preview {
+margin-right: 3rem;
+}
+}
+@media (max-width: 880px) {
+body {
+margin: 0;
+}
+form h3 {
+text-align: center;
+}
+.cart {
+flex-direction: column-reverse;
+align-items: center;
+justify-content: center;
+margin-left: 0;
+}
+.form {
+margin-top: 2rem;
+}
+.preview {
+height: 400px;
+width: 350px;
+margin-right: 3rem;
+}
+
+}
+</style>
+<body>
+<form action="" enctype="multipart/form-data" method="put">
+<img src="https://res.cloudinary.com/djww0nfoy/image/upload/v1661447009/web%20dev/large-pStUGbPch-transformed_voigm3.jpg" alt="logo" style="width: 200px;">
+<div class="cart">
+<div class="form">
+<label for="tagline">Enter Tagline:</label>
+<input type="text" name="tagline" id="tagline" /> <br
+/>
+<label for="color">Choose Color:</label>
+<input type="radio" id="red" name="color" value="Red"
+/>
+<label for="red">Red</label>
+<input type="radio" id="white" name="color"
+value="White" />
+<label for="white">White</label>
+<input type="radio" id="green" name="color"
+value="Green" />
+<label for="green">Green</label>
+<input type="radio" id="yellow" name="color"
+value="Yellow" />
+<label for="yellow">Yellow</label>
+<input type="radio" id="yellow" name="color" value="yellow"
+/>
+<label for="blue">Blue</label> <br />
+<label for="size">Select Size:</label>
+<select id="size" name="size">
+  <option value="XS">XS</option>
+<option value="S">S</option>
+<option value="M">M</option>
+<option value="L">L</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
+</select>
+<br />
+<label for="quantity">Quantity: </label>
+<select id="quantity" name="quantity">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+</select>
+<br />
+<label for="price"
+>Total Order Price: <strong>39.99$</strong></label
+>
+<br> <br>
+<label for="contact">Contact Number:</label>
+<input type="number" id="contact" name="contact" style="width: 30%; box-sizing: border-box; box-shadow:2px 2px 2px 1px rgba(0, 0, 0, 0.2); padding: 5px 5px;"><br>
+
+<div class="mt-1"></div>
+<label for="payment_options">Payment Options:</label>
+<br />
+<div class="options">
+<input
+type="radio"
+id="cc"
+name="color"
+value="Credit/Debit Card"
+/>
+<label for="cc">Credit/Debit Card</label> <br />
+<input type="radio" id="upi" name="color"
+value="UPI" />
+<label for="upi">UPI</label> <br />
+<input type="radio" id="cod" name="color"
+value="COD" />
+<label for="cod">Cash On Delivery</label> <br />
+<input
+type="radio"
+id="crypto"
+name="color"
+value="Crypto"
+/>
+<label for="crypto">Crypto-Wallet</label>
+</div>
+<label for="address">Address:</label><br>
+<p>56, Churchill Apartments, Peterson Av., San Marcos, Tx</p>
+<button type="submit" onclick="validateForm(this.form)" class="btn" >Order</button>
+</div>
+<div class="preview">
+<img src="https://res.cloudinary.com/djww0nfoy/image/upload/v1659328098/iplab/tshirt_ctgop6.webp" alt="" / >
+</div>
+</div>
+</form>
+</body>
+<script>
+    function validateForm(form) {
+        const receipt = `
+            Thank you for shopping!
+            Here is your receipt:
+            Date: ${new Date().toLocaleDateString("IN")}
+            Tagline: ${form.tagline.value}
+            Size: ${form.size.value}
+            Quantity: ${form.quantity.value}
+            Contact Number: ${form.contact.value}
+            Please visit us again!
+        `;
+
+        if(form.tagline.value == "")
+        alert("Please enter the tagline!");
+        else if(form.size.value == "")
+        alert("Size field cannot be empty");
+        else if(form.quantity.value == "")
+        alert("Quantity field cannot be empty");
+        else if(form.contact.value.length < 10 || form.contact.value.length > 10)
+        alert("Please enter a valid contact number");
+        else if(form.contact.value == "")
+        alert("Contact no field cannot be empty");
+        else alert(receipt);
+    }
+</script>
+
+</html>
